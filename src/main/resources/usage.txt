@@ -1,0 +1,16 @@
+Usage: main <config-file> [options]
+
+Parses a HOCON config file, merges all the settings from all included files,
+   and writes the output to stdout.
+
+Default output: concise:  JSON (almost) representation, no comments.
+
+Options:
+-verbose: add comments that indicate how settings were merged
+-resolve: Representation can contain substitutions, ex: ${VARIABLE}, which isn't
+  JSON compliant. Using -resolve will resolve all substitutions with env vars 
+  (and remove the keys entirely where the values are unresolved).
+  Maybe not the most useful option, because of the key removal thingie.
+-help: Shows this help screen
+
+Author: Vlad Dinulescu <vlad.dinulescu@arnia.ro>
