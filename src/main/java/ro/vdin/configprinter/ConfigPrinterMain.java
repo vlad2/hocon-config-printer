@@ -33,7 +33,7 @@ public class ConfigPrinterMain {
         System.err.println(text);
     }
 
-    private static MainConfig parseCmdlineArgs(String[] args) throws FileNotFoundException {
+    private static MainConfig parseCmdlineArgs(String[] args) throws IOException {
         if (args.length < 1) {
             throw new IllegalArgumentException();
         }
@@ -45,6 +45,10 @@ public class ConfigPrinterMain {
         File file = new File(args[0]);
         if (!file.exists()) {
             throw new FileNotFoundException("File not found: " + file);
+        }
+
+        if (file.isDirectory()) {
+            throw new IOException("File " + file + " is a directory, not a normal file!");
         }
 
         boolean verboseOutput = false;

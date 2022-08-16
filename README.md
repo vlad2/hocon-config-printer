@@ -38,4 +38,4 @@ The project is a small wrapper around the [HOCON library](https://github.com/lig
 
 ### Authors
 
-_Vlad Dinulescu <vlad.dinulescu@arnia.ro>_
+_Vlad Dinulescu <vlad.dinulescu.dev@gmail.com>_
